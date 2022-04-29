@@ -1,0 +1,101 @@
+from tkinter import *
+
+root = Tk()
+root.title("Calculator")
+root.maxsize(400, 500)
+root.minsize(400, 500)
+
+def display(event):
+    global screen
+    text = event.widget.cget("text")
+    if(text == '='):
+        screen.set(eval(screen.get()))
+    elif(text == 'C'):
+        screen.set("")
+    else:
+        screen.set(screen.get() + text)
+
+# Screen
+screen = StringVar()
+Entry(root, textvariable = screen, font = "lucida 40 bold").pack(fill = X, padx = 5, pady = 5)
+
+# Buttons
+f = Frame(root, bg = "grey", borderwidth = 5, relief = RAISED)
+button_var = Button(f, text = "7", font = "lucida 20 bold")
+button_var.pack(side = LEFT, padx = 2)
+button_var.bind('<Button-1>', display)
+button_var = Button(f, text = "8", font = "lucida 20 bold")
+button_var.pack(side = LEFT, padx = 2)
+button_var.bind('<Button-1>', display)
+button_var = Button(f, text = "9", font = "lucida 20 bold")
+button_var.pack(side = LEFT, padx = 2)
+button_var.bind('<Button-1>', display)
+
+button_var = Button(f, text = "+", font = "lucida 20 bold")
+button_var.pack(side = LEFT, anchor = 'e', padx = 2)
+button_var.bind('<Button-1>', display)
+button_var = Button(f, text = "-", font = "lucida 20 bold")
+button_var.pack(side = LEFT, anchor = 'e', padx = 2)
+button_var.bind('<Button-1>', display)
+button_var = Button(f, text = "*", font = "lucida 20 bold")
+button_var.pack(side = LEFT, anchor = 'e', padx = 2)
+button_var.bind('<Button-1>', display)
+button_var = Button(f, text = "/", font = "lucida 20 bold")
+button_var.pack(side = LEFT, anchor = 'e', padx = 2)
+button_var.bind('<Button-1>', display)
+
+f.pack(anchor = 'nw', padx = 5)
+
+
+f = Frame(root, bg = "grey", borderwidth = 5, relief = RAISED)
+button_var = Button(f, text = "4", font = "lucida 20 bold")
+button_var.pack(side = LEFT, padx = 2)
+button_var.bind('<Button-1>', display)
+button_var = Button(f, text = "5", font = "lucida 20 bold")
+button_var.pack(side = LEFT, padx = 2)
+button_var.bind('<Button-1>', display)
+button_var = Button(f, text = "6", font = "lucida 20 bold")
+button_var.pack(side = LEFT, padx = 2)
+button_var.bind('<Button-1>', display)
+f.pack(anchor = 'nw', padx = 5)
+
+f = Frame(root, bg = "grey", borderwidth = 5, relief = RAISED)
+button_var = Button(f, text = "1", font = "lucida 20 bold")
+button_var.pack(side = LEFT, padx = 2)
+button_var.bind('<Button-1>', display)
+button_var = Button(f, text = "2", font = "lucida 20 bold")
+button_var.pack(side = LEFT, padx = 2)
+button_var.bind('<Button-1>', display)
+button_var = Button(f, text = "3", font = "lucida 20 bold")
+button_var.pack(side = LEFT, padx = 2)
+button_var.bind('<Button-1>', display)
+f.pack(anchor = 'nw', padx = 5)
+
+f = Frame(root, bg = "grey", borderwidth = 5, relief = RAISED)
+button_var = Button(f, text = "C", font = "lucida 20 bold")
+button_var.pack(side = LEFT, padx = 2)
+button_var.bind('<Button-1>', display)
+button_var = Button(f, text = "0", font = "lucida 20 bold")
+button_var.pack(side = LEFT, padx = 2)
+button_var.bind('<Button-1>', display)
+button_var = Button(f, text = ".", font = "lucida 20 bold")
+button_var.pack(side = LEFT, padx = 2)
+button_var.bind('<Button-1>', display)
+button_var = Button(f, text = "=", font = "lucida 20 bold")
+button_var.pack(side = LEFT, padx = 2)
+button_var.bind('<Button-1>', display)
+f.pack(anchor = 'nw', padx = 5)
+
+# button_var = Button(f, text = "+", font = "lucida 20 bold")
+# button_var.pack(side = LEFT, padx = 2)
+# button_var.bind('<Button-1>', display)
+# button_var = Button(f, text = "-", font = "lucida 20 bold")
+# button_var.pack(side = LEFT, padx = 2)
+# button_var.bind('<Button-1>', display)
+# button_var = Button(f, text = "*", font = "lucida 20 bold")
+# button_var.pack(side = LEFT, padx = 2)
+# button_var.bind('<Button-1>', display)
+# button_var = Button(f, text = "/", font = "lucida 20 bold")
+# button_var.pack(side = LEFT, padx = 2)
+# button_var.bind('<Button-1>', display)
+root.mainloop()

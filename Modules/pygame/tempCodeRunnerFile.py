@@ -1,0 +1,1 @@
+print(game_window, (0, 0, 0), character_x,character_y, width_character, height_character)
